@@ -1,32 +1,80 @@
 <template>
   <div class="logo">
-    <img src="../assets/logo.png" alt="logo" style="width: 50px; height: 50px" />
-    <text>CASTFORM</text>
+    <img src="../assets/logo.png" alt="logo" style="width: 100px; height: 100px" />
+    <text style="color: black">CASTFORM</text>
   </div>
-  <div class="maplayout">
-    <div class="weather_map"></div>
-    <img
-      class="mapImg"
-      src="../assets/map.png"
-      alt="map"
-      style="width: 250px; height: 550px; margin-top: 10%"
-    />
+  <div class="container">
+    <div class="maplayout">
+      <div>
+        <div class="weather_map"></div>
+        <div class="weather_map2"></div>
+        <div class="weather_map3"></div>
+        <div class="weather_map4"></div>
+        <div class="weather_map5"></div>
+      </div>
+      <img
+        class="mapImg"
+        src="../assets/map.png"
+        alt="map"
+        style="width: 290px; height: 480px; margin-top: 15%"
+      />
+    </div>
+    <div class="weatherInfoLayout">
+      <div class="playInfo"></div>
+      <div class="weatherInfo"></div>
+    </div>
+    <div class="chatlayout"></div>
   </div>
+  <table class="custom-table">
+    <tr>
+      <th>날짜</th>
+      <th>m월 d일</th>
+      <th>m월 d일</th>
+      <th>m월 d일</th>
+      <th>m월 d일</th>
+      <th>m월 d일</th>
+    </tr>
+    <tr>
+      <td>예보</td>
+      <td>구름많음</td>
+      <td>구름많음</td>
+      <td>구름많음</td>
+      <td>구름많음</td>
+      <td>구름많음</td>
+    </tr>
+    <tr>
+      <td>최저 / 최고기온</td>
+      <td>25° / 33°</td>
+      <td>25° / 33°</td>
+      <td>25° / 33°</td>
+      <td>25° / 33°</td>
+      <td>25° / 33°</td>
+    </tr>
+    <tr>
+      <td>강수확률</td>
+      <td>20%</td>
+      <td>20%</td>
+      <td>20%</td>
+      <td>20%</td>
+      <td>20%</td>
+    </tr>
+  </table>
 </template>
 
-<style>
+<style scoped>
 .logo {
   display: flex;
   flex-direction: row;
   align-items: center;
   font-family: 'CookieRun', sans-serif;
-  font-size: 24px;
+  font-size: 34px;
+  justify-content: center;
   padding-top: 10px;
   padding-bottom: 20px;
   padding-left: 25px;
   border-bottom: 0.5px solid #e5e7eb;
   background-color: #ffffff;
-  z-index: 1; /*인덱스가 높을수록 앞으로 보낼 수 있음*/
+  z-index: 2; /*인덱스가 높을수록 앞으로 보낼 수 있음*/
   width: 100%;
   position: sticky;
   top: 0;
@@ -35,22 +83,124 @@
   width: 50px;
   height: 50px;
 }
+.container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 3%;
+}
 .maplayout {
-  width: 580px;
-  height: 700px;
-  border-radius: 15px;
+  width: 700px;
+  height: 715px;
+  border-radius: 10px;
   background-color: rgba(217, 217, 217, 0.19);
   display: flex;
-  margin-left: 7%;
-  margin-top: 3%;
+  margin-left: 12%;
+  padding-top: 2.5%;
   justify-content: space-evenly;
+  margin-right: 15px;
 }
+
 .weather_map {
-  width: 170px;
+  width: 180px;
   height: 120px;
-  border-radius: 15px;
+  border-radius: 10px;
   background-color: #ffffff;
-  margin-left: 15px;
+  margin-top: -32px;
+  margin-left: 10px;
   margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.weather_map2 {
+  width: 180px;
+  height: 120px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.weather_map3 {
+  width: 180px;
+  height: 120px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.weather_map4 {
+  width: 180px;
+  height: 120px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.weather_map5 {
+  width: 180px;
+  height: 120px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.weatherInfoLayout {
+  display: flex;
+  flex-direction: column;
+  gap: auto;
+}
+.playInfo {
+  width: 400px;
+  height: 208px;
+  border-radius: 10px;
+  background-color: #d9d9d9;
+  display: flex;
+  margin-bottom: 15px;
+}
+.weatherInfo {
+  width: 400px;
+  height: 490px;
+  border-radius: 10px;
+  background-color: #d9d9d9;
+  display: flex;
+}
+.chatlayout {
+  width: 310px;
+  height: 480px;
+  background-color: #d9d9d9;
+  margin-left: 15px;
+  border-radius: 10px;
+  position: sticky;
+  top: 100px; /* Adjust this value as needed */
+  align-self: flex-start;
+}
+.custom-table {
+  font-family: 'Pretendard', sans-serif;
+  width: 76%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-left: 228px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.custom-table th {
+  background-color: #f3f4f6;
+  font-weight: bold;
+  font-size: 14px;
+  color: #4b5563;
 }
 </style>
