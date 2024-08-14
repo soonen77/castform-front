@@ -25,6 +25,7 @@
     </div>
     <div class="chatlayout"></div>
   </div>
+  <P class="font"> 00 야구장 일기예보 </P>
   <table class="custom-table">
     <tr>
       <th>날짜</th>
@@ -43,12 +44,20 @@
       <td>구름많음</td>
     </tr>
     <tr>
-      <td>최저 / 최고기온</td>
-      <td>25° / 33°</td>
-      <td>25° / 33°</td>
-      <td>25° / 33°</td>
-      <td>25° / 33°</td>
-      <td>25° / 33°</td>
+      <td>최저기온</td>
+      <td>33°</td>
+      <td>33°</td>
+      <td>33°</td>
+      <td>33°</td>
+      <td>33°</td>
+    </tr>
+    <tr>
+      <td>최고기온</td>
+      <td>25°</td>
+      <td>25°</td>
+      <td>25°</td>
+      <td>25°</td>
+      <td>25°</td>
     </tr>
     <tr>
       <td>강수확률</td>
@@ -62,6 +71,12 @@
 </template>
 
 <style scoped>
+.font{
+  font-family: 'CookieRun', sans-serif;
+  margin-left: 12%;
+  margin-top: 30px;
+  font-size: 24px;
+}
 .logo {
   display: flex;
   flex-direction: row;
@@ -177,12 +192,12 @@
   margin-left: 15px;
   border-radius: 10px;
   position: sticky;
-  top: 100px; /* Adjust this value as needed */
+  top: 150px; /* Adjust this value as needed */
   align-self: flex-start;
 }
 .custom-table {
   font-family: 'Pretendard', sans-serif;
-  width: 76%;
+  width: 58.5%;
   border-collapse: collapse;
   margin-top: 20px;
   margin-left: 228px;
