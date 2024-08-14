@@ -1,87 +1,118 @@
 <template>
-  <div class="logo">
-    <img src="../assets/logo.png" alt="logo" style="width: 100px; height: 100px" />
-    <text style="color: black">CASTFORM</text>
-  </div>
-  <div class="container">
-    <div class="maplayout">
-      <div>
-        <div class="weather_map"></div>
-        <div class="weather_map2"></div>
-        <div class="weather_map3"></div>
-        <div class="weather_map4"></div>
-        <div class="weather_map5"></div>
+  <div style="display: flex; justify-content: center"></div>
+  <div class="main-container">
+    <div class="logo">
+      <img src="../assets/logo.png" alt="logo" style="width: 100px; height: 100px" />
+      <b style="color: black; font-weight: 600">CASTFORM</b>
+    </div>
+    <div style="display: flex; justify-content: center">
+      <div class="content-wrapper">
+        <div>
+          <div class="container">
+            <div class="maplayout">
+              <div class="weather_map_layout">
+                <div class="weather_map"></div>
+                <div class="weather_map2"></div>
+                <div class="weather_map3"></div>
+                <div class="weather_map4"></div>
+                <div class="weather_map5"></div>
+              </div>
+              <img
+                class="mapImg"
+                src="../assets/map.png"
+                alt="map"
+                style="width: 290px; height: 480px; margin-top: 15%"
+              />
+            </div>
+            <div class="weatherInfoLayout">
+              <div class="playInfo"></div>
+              <div class="weatherInfo"></div>
+            </div>
+          </div>
+
+          <P class="font"> 00 야구장 일기예보 </P>
+          <table class="custom-table">
+            <tr>
+              <th>날짜</th>
+              <th>m월 d일</th>
+              <th>m월 d일</th>
+              <th>m월 d일</th>
+              <th>m월 d일</th>
+              <th>m월 d일</th>
+            </tr>
+            <tr>
+              <td>예보</td>
+              <td>구름많음</td>
+              <td>구름많음</td>
+              <td>구름많음</td>
+              <td>구름많음</td>
+              <td>구름많음</td>
+            </tr>
+            <tr>
+              <td>최저기온</td>
+              <td>33°</td>
+              <td>33°</td>
+              <td>33°</td>
+              <td>33°</td>
+              <td>33°</td>
+            </tr>
+            <tr>
+              <td>최고기온</td>
+              <td>25°</td>
+              <td>25°</td>
+              <td>25°</td>
+              <td>25°</td>
+              <td>25°</td>
+            </tr>
+            <tr>
+              <td>강수확률</td>
+              <td>20%</td>
+              <td>20%</td>
+              <td>20%</td>
+              <td>20%</td>
+              <td>20%</td>
+            </tr>
+          </table>
+        </div>
+        <div class="chat-container">
+          <div class="chatlayout"></div>
+        </div>
       </div>
-      <img
-        class="mapImg"
-        src="../assets/map.png"
-        alt="map"
-        style="width: 290px; height: 480px; margin-top: 15%"
-      />
     </div>
-    <div class="weatherInfoLayout">
-      <div class="playInfo"></div>
-      <div class="weatherInfo"></div>
-    </div>
-    <div class="chatlayout"></div>
   </div>
-  <P class="font"> 00 야구장 일기예보 </P>
-  <table class="custom-table">
-    <tr>
-      <th>날짜</th>
-      <th>m월 d일</th>
-      <th>m월 d일</th>
-      <th>m월 d일</th>
-      <th>m월 d일</th>
-      <th>m월 d일</th>
-    </tr>
-    <tr>
-      <td>예보</td>
-      <td>구름많음</td>
-      <td>구름많음</td>
-      <td>구름많음</td>
-      <td>구름많음</td>
-      <td>구름많음</td>
-    </tr>
-    <tr>
-      <td>최저기온</td>
-      <td>33°</td>
-      <td>33°</td>
-      <td>33°</td>
-      <td>33°</td>
-      <td>33°</td>
-    </tr>
-    <tr>
-      <td>최고기온</td>
-      <td>25°</td>
-      <td>25°</td>
-      <td>25°</td>
-      <td>25°</td>
-      <td>25°</td>
-    </tr>
-    <tr>
-      <td>강수확률</td>
-      <td>20%</td>
-      <td>20%</td>
-      <td>20%</td>
-      <td>20%</td>
-      <td>20%</td>
-    </tr>
-  </table>
 </template>
 
 <style scoped>
-.font{
-  font-family: 'CookieRun', sans-serif;
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+    format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  display: flex;
+}
+
+.font {
+  font-family: 'Pretendard-Regular', sans-serif;
   margin-left: 12%;
   margin-top: 30px;
   font-size: 24px;
 }
+
 .logo {
   display: flex;
   flex-direction: row;
   align-items: center;
-  font-family: 'CookieRun', sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-size: 34px;
   justify-content: center;
   padding-top: 10px;
@@ -89,20 +120,23 @@
   padding-left: 25px;
   border-bottom: 0.5px solid #e5e7eb;
   background-color: #ffffff;
-  z-index: 2; /*인덱스가 높을수록 앞으로 보낼 수 있음*/
+  z-index: 2;
   width: 100%;
   position: sticky;
   top: 0;
 }
+
 .logoImg {
   width: 50px;
   height: 50px;
 }
+
 .container {
   display: flex;
   flex-direction: row;
   margin-top: 3%;
 }
+
 .maplayout {
   width: 700px;
   height: 715px;
@@ -120,41 +154,20 @@
   height: 120px;
   border-radius: 10px;
   background-color: #ffffff;
-  margin-top: -32px;
+  margin-top: -12px;
   margin-left: 10px;
   margin-bottom: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
-.weather_map2 {
-  width: 180px;
-  height: 120px;
-  border-radius: 10px;
-  background-color: #ffffff;
-  margin-top: 20px;
-  margin-left: 10px;
-  margin-bottom: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+.weather_map:hover {
+  transform: translateY(-8px);
 }
-.weather_map3 {
-  width: 180px;
-  height: 120px;
-  border-radius: 10px;
-  background-color: #ffffff;
-  margin-top: 20px;
-  margin-left: 10px;
-  margin-bottom: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.weather_map4 {
-  width: 180px;
-  height: 120px;
-  border-radius: 10px;
-  background-color: #ffffff;
-  margin-top: 20px;
-  margin-left: 10px;
-  margin-bottom: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+
+.weather_map2,
+.weather_map3,
+.weather_map4,
 .weather_map5 {
   width: 180px;
   height: 120px;
@@ -165,11 +178,13 @@
   margin-bottom: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .weatherInfoLayout {
   display: flex;
   flex-direction: column;
   gap: auto;
 }
+
 .playInfo {
   width: 400px;
   height: 208px;
@@ -178,6 +193,7 @@
   display: flex;
   margin-bottom: 15px;
 }
+
 .weatherInfo {
   width: 400px;
   height: 490px;
@@ -185,24 +201,32 @@
   background-color: #d9d9d9;
   display: flex;
 }
-.chatlayout {
+
+.chat-container {
   width: 310px;
-  height: 480px;
-  background-color: #d9d9d9;
-  margin-left: 15px;
-  border-radius: 10px;
   position: sticky;
-  top: 150px; /* Adjust this value as needed */
+  top: 17%;
+  height: fit-content;
+  margin-left: 15px;
+  margin-right: 15px;
   align-self: flex-start;
 }
+
+.chatlayout {
+  width: 100%;
+  height: 480px;
+  background-color: #d9d9d9;
+  border-radius: 10px;
+}
+
 .custom-table {
   font-family: 'Pretendard', sans-serif;
-  width: 58.5%;
+  width: 88%;
   border-collapse: collapse;
   margin-top: 20px;
-  margin-left: 228px;
   background-color: #ffffff;
   border-radius: 10px;
+  margin-left: 12%;
 }
 
 .custom-table th,
