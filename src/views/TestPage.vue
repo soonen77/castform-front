@@ -11,11 +11,101 @@
           <div class="container">
             <div class="maplayout">
               <div class="weather_map_layout">
-                <div class="weather_map"></div>
-                <div class="weather_map2"></div>
-                <div class="weather_map3"></div>
-                <div class="weather_map4"></div>
-                <div class="weather_map5"></div>
+                <div class="weather_map">
+                  <li class="JS_today">
+                    <dl class="location-box">
+                      <dt>잠실야구장</dt>
+                      <dd>
+                        <img
+                          src="//lgcxydabfbch3774324.cdn.ntruss.com/KBO_IMAGE/KBOHome/resources/images/weather/sky/02_s.png"
+                          alt="이미지 없음"
+                        />
+                        <span class="celsius">35℃</span>
+                        <p>강수확률 30%</p>
+                        <p>
+                          (초)미세먼지
+                          <strong>좋음</strong>
+                        </p>
+                      </dd>
+                    </dl>
+                  </li>
+                </div>
+                <div class="weather_map2">
+                  <li class="DK_today">
+                    <dl class="location-box">
+                      <dt>잠실야구장</dt>
+                      <dd>
+                        <img
+                          src="//lgcxydabfbch3774324.cdn.ntruss.com/KBO_IMAGE/KBOHome/resources/images/weather/sky/02_s.png"
+                          alt="이미지 없음"
+                        />
+                        <span class="celsius">35℃</span>
+                        <p>강수확률 30%</p>
+                        <p>
+                          (초)미세먼지
+                          <strong>좋음</strong>
+                        </p>
+                      </dd>
+                    </dl>
+                  </li>
+                </div>
+                <div class="weather_map3">
+                  <li class="CW_today">
+                    <dl class="location-box">
+                      <dt>잠실야구장</dt>
+                      <dd>
+                        <img
+                          src="//lgcxydabfbch3774324.cdn.ntruss.com/KBO_IMAGE/KBOHome/resources/images/weather/sky/02_s.png"
+                          alt="이미지 없음"
+                        />
+                        <span class="celsius">35℃</span>
+                        <p>강수확률 30%</p>
+                        <p>
+                          (초)미세먼지
+                          <strong>좋음</strong>
+                        </p>
+                      </dd>
+                    </dl>
+                  </li>
+                </div>
+                <div class="weather_map4">
+                  <li class="GC_today">
+                    <dl class="location-box">
+                      <dt>잠실야구장</dt>
+                      <dd>
+                        <img
+                          src="//lgcxydabfbch3774324.cdn.ntruss.com/KBO_IMAGE/KBOHome/resources/images/weather/sky/02_s.png"
+                          alt="이미지 없음"
+                        />
+                        <span class="celsius">35℃</span>
+                        <p>강수확률 30%</p>
+                        <p>
+                          (초)미세먼지
+                          <strong>좋음</strong>
+                        </p>
+                      </dd>
+                    </dl>
+                  </li>
+                </div>
+                <div class="weather_map5">
+                  <li class="DJ_today">
+                    <dl class="location-box">
+                      <dt>잠실야구장</dt>
+                      <dd>
+                        <img
+                          src="//lgcxydabfbch3774324.cdn.ntruss.com/KBO_IMAGE/KBOHome/resources/images/weather/sky/02_s.png"
+                          alt="이미지 없음"
+                        />
+                        <span class="celsius">35℃</span>
+                        <p>강수확률 30%</p>
+                        <p>
+                          (초)미세먼지
+                          <strong>좋음</strong>
+                        </p>
+                      </dd>
+                    </dl>
+                  </li>
+                </div>
               </div>
               <img
                 class="mapImg"
@@ -241,5 +331,9 @@
   font-weight: bold;
   font-size: 14px;
   color: #4b5563;
+}
+
+li {
+  list-style: none;
 }
 </style>
