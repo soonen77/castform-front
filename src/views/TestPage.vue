@@ -115,8 +115,74 @@
               />
             </div>
             <div class="weatherInfoLayout">
-              <div class="playInfo"></div>
-              <div class="weatherInfo"></div>
+              <div class="playInfo">
+                <div class="startLayout">
+                  <p2 style="font-weight: 800; font-size: 25px; line-height: 29.83px">
+                    오늘의 경기
+                  </p2>
+                  <text style="font-weight: 700; font-size: 15px"> 경기시작 </text>
+                </div>
+                <div class="vsLayout">
+                  <img src="../assets/logo.png" alt="logo" style="width: 80px; height: 80px" />
+                  <p2 style="font-size: xxx-large">VS</p2>
+                  <img src="../assets/logo.png" alt="logo" style="width: 80px; height: 80px" />
+                </div>
+              </div>
+              <div class="weatherInfo">
+                <p2 style="font-weight: 800; font-size: 25px; line-height: 29.83px">
+                  스퐁이 야구장
+                </p2>
+                <p1 style="font-size: xxx-large">33°</p1>
+                <p4 style="font-size: small; text-align: center; margin-bottom: 10px"
+                  >최고:33° 최저:23° <br />흐림</p4
+                >
+                <div style="display: flex; flex-direction: column">
+                  <div class="detailInfo">
+                    <img src="../assets/logo.png" alt="logo" style="width: 65px; height: 65px" />
+                    <p1 style="font-size: large; font-weight: 850; margin-right: 15px"
+                      >강수량
+                      <br />
+                      <p4 style="font-size: large; font-weight: 600">-mm</p4>
+                    </p1>
+                    <img src="../assets/logo.png" alt="logo" style="width: 65px; height: 65px" />
+                    <p1 style="font-size: large; font-weight: 850"
+                      >습도
+                      <br />
+                      <p4 style="font-size: large; font-weight: 600">40%</p4>
+                    </p1>
+                  </div>
+                  <br />
+                  <div class="detailInfo">
+                    <img src="../assets/logo.png" alt="logo" style="width: 65px; height: 65px" />
+                    <p1 style="font-size: large; font-weight: 850; margin-right: 20px"
+                      >풍향
+                      <br />
+                      <p4 style="font-size: large; font-weight: 600">2.8-/s</p4>
+                    </p1>
+                    <img src="../assets/logo.png" alt="logo" style="width: 65px; height: 65px" />
+                    <p1 style="font-size: large; font-weight: 850"
+                      >자외선
+                      <br />
+                      <p4 style="font-size: large; font-weight: 600">75%</p4>
+                    </p1>
+                  </div>
+                  <div class="detailInfo2">
+                    <img src="../assets/logo.png" alt="logo" style="width: 40px; height: 40px" />
+                    <p1 style="font-size: large; font-weight: 850; margin-right: 20px"
+                      >미세먼지
+                      <br />
+                      <p4 style="font-size: large; font-weight: 400">보통</p4>
+                    </p1>
+                    <br />
+                    <img src="../assets/logo.png" alt="logo" style="width: 40px; height: 40px" />
+                    <p1 style="font-size: large; font-weight: 850"
+                      >초미세먼지
+                      <br />
+                      <p4 style="font-size: large; font-weight: 400">안좋음</p4>
+                    </p1>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -281,7 +347,22 @@
   border-radius: 10px;
   background-color: #d9d9d9;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 15px;
+  justify-content: center;
+}
+.startLayout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.vsLayout {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  grid-gap: 15px;
+  justify-items: center;
+  align-items: center;
 }
 
 .weatherInfo {
@@ -290,6 +371,22 @@
   border-radius: 10px;
   background-color: #d9d9d9;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.detailInfo {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
+.detailInfo2 {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  margin-top: 30px;
 }
 
 .chat-container {
