@@ -236,9 +236,6 @@
         </div>
         <div :class="$style.chatContainer">
           <div :class="$style.chatlayout">
-            <input> 
-          </div>
-          <div :class="$style.chatlayout">
             <div :class="$style.inputlayout"><input :class="$style.chatBox"/>
               <button :class="$style.buttonBox">
                 <div style="font-size: 16px;">
