@@ -150,7 +150,7 @@
                     </p1>
                     <img src="../assets/logo.png" alt="logo" style="width: 65px; height: 65px" />
                     <p1 style="font-size: large; font-weight: 850"
-                      >습도
+                      >강수확률
                       <br />
                       <p4 style="font-size: large; font-weight: 600">40%</p4>
                     </p1>
@@ -165,7 +165,7 @@
                     </p1>
                     <img src="../assets/logo.png" alt="logo" style="width: 65px; height: 65px" />
                     <p1 style="font-size: large; font-weight: 850"
-                      >자외선
+                      >습도
                       <br />
                       <p4 style="font-size: large; font-weight: 600">75%</p4>
                     </p1>
@@ -209,7 +209,7 @@
               <td>구름많음</td>
             </tr>
             <tr>
-              <td>최저기온</td>
+              <td>최고기온</td>
               <td>33°</td>
               <td>33°</td>
               <td>33°</td>
@@ -217,7 +217,7 @@
               <td>33°</td>
             </tr>
             <tr>
-              <td>최고기온</td>
+              <td>최저기온</td>
               <td>25°</td>
               <td>25°</td>
               <td>25°</td>
@@ -237,6 +237,14 @@
         <div :class="$style.chatContainer">
           <div :class="$style.chatlayout">
             <input> 
+          </div>
+          <div :class="$style.chatlayout">
+            <div :class="$style.inputlayout"><input :class="$style.chatBox"/>
+              <button :class="$style.buttonBox">
+                <div style="font-size: 16px;">
+                    전송
+                </div></button>
+            </div>
           </div>
         </div>
       </div>
