@@ -13,7 +13,7 @@
               <div :class="$style.weather_map_layout">
                 <div :class="$style.weather_map">
                   <li :class="$style.JS_today">
-                    <dl :class="$style.location-box">
+                    <dl :class="$style.location - box">
                       <dt>잠실야구장</dt>
                       <dd>
                         <img
@@ -32,7 +32,7 @@
                 </div>
                 <div :class="$style.weather_map2">
                   <li :class="$style.DK_today">
-                    <dl :class="$style.location-box">
+                    <dl :class="$style.location - box">
                       <dt>잠실야구장</dt>
                       <dd>
                         <img
@@ -51,7 +51,7 @@
                 </div>
                 <div :class="$style.weather_map3">
                   <li :class="$style.CW_today">
-                    <dl :class="$style.location-box">
+                    <dl :class="$style.location - box">
                       <dt>잠실야구장</dt>
                       <dd>
                         <img
@@ -70,7 +70,7 @@
                 </div>
                 <div :class="$style.weather_map4">
                   <li :class="$style.GC_today">
-                    <dl :class="$style.location-box">
+                    <dl :class="$style.location - box">
                       <dt>잠실야구장</dt>
                       <dd>
                         <img
@@ -89,7 +89,7 @@
                 </div>
                 <div :class="$style.weather_map5">
                   <li :class="$style.DJ_today">
-                    <dl :class="$style.location-box">
+                    <dl :class="$style.location - box">
                       <dt>잠실야구장</dt>
                       <dd>
                         <img
@@ -231,7 +231,14 @@
           </table>
         </div>
         <div :class="$style.chatContainer">
-          <div :class="$style.chatlayout"></div>
+          <div :class="$style.chatlayout">
+            <div :class="$style.inputlayout"><input :class="$style.chatBox"/>
+              <button :class="$style.buttonBox">
+                <div style="font-size: 16px;">
+                    전송
+                </div></button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -241,7 +248,7 @@
 <script>
 export default {
   name: 'TestPage'
-};
+}
 </script>
 
 <style module src="@/assets/TestPage.module.css"></style>
