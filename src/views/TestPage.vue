@@ -37,7 +37,7 @@
               </div>
               <div :class="$style.vsLayout">
                 <img src="../assets/logo.png" alt="logo" style="width: 80px; height: 80px" />
-                <p2 style="font-size: xxx-large">{{ selectedGame.homeName }} VS {{ selectedGame.awayName }}</p2>
+                <p2 style="font-size: xxx-large"> VS </p2>
                   <img src="../assets/logo.png" alt="logo" style="width: 80px; height: 80px" />
                 </div>
               </div>
@@ -146,9 +146,8 @@
           <div :class="$style.chatlayout">
             <div :class="$style.inputlayout"><input :class="$style.chatBox"/>
               <button :class="$style.buttonBox">
-                <div style="font-size: 16px;">
-                    전송
-                </div></button>
+                <div>Submit</div>
+                </button>
             </div>
           </div>
         </div>
