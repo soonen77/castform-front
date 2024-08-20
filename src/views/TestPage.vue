@@ -64,7 +64,7 @@
                   <!-- away VS home -->
                   <div :class="$style.today_game_teamname">
                     <img
-                      :src="`/logo/${selectedGame.homeCode}.png`"
+                      :src="`/logo/${selectedGame.home}.png`"
                       @error="$event.target.src = '/logo.png'"
                       style="width: 80px; height: 80px"
                     />
@@ -73,7 +73,7 @@
                   <div><p2 style="font-size: x-large">VS </p2></div>
                   <div :class="$style.today_game_teamname">
                     <img
-                      :src="`/logo/${selectedGame.awayCode}.png`"
+                      :src="`/logo/${selectedGame.away}.png`"
                       @error="$event.target.src = '/logo.png'"
                       style="width: 80px; height: 80px"
                     />
