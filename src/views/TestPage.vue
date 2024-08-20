@@ -43,54 +43,60 @@
               </div>
               <div :class="$style.weatherInfo">
                 <p2 style="font-weight: 800; font-size: 25px; line-height: 29.83px">
-                  stadiumFullname
+                  {{ selectedGame.stadiumFullName }}
                 </p2>
                 <p1 style="font-size: xxx-large">33°</p1>
-                <p4 style="font-size: small; text-align: center; margin-bottom: 10px"
-                  >최고:33° 최저:23° <br />흐림</p4>
+                <p4 v-if="weeklyWeather.weatherList.length > 0" style="font-size: small; text-align: center; margin-bottom: 10px">
+                        최고: {{ weeklyWeather.weatherList[0].tempMax }}° /
+                        최저: {{ weeklyWeather.weatherList[0].tempMin }}°
+                        <br />
+                        {{ weeklyWeather.weatherList[0].iconName }}
+                      </p4>
                 <div style="display: flex; flex-direction: column">
                   <div :class="$style.detailInfo">
                     <img src="../assets/logo.png" alt="logo" style="width: 65px; height: 65px" />
                     <p1 style="font-size: large; font-weight: 850; margin-right: 15px"
-                      >강수량
+                      >강수량 
                       <br />
-                      <p4 style="font-size: large; font-weight: 600">-mm</p4>
+                      {{ console.log(`currentWeather.rain: ${currentWeather.rain}`) }}
+                      {{ console.log(currentWeather.rain === "") }}
+                      <p4 style="font-size: large; font-weight: 600">{{ currentWeather.rain }} </p4>
                     </p1>
                     <img src="../assets/logo.png" alt="logo" style="width: 65px; height: 65px" />
                     <p1 style="font-size: large; font-weight: 850"
-                      >강수확률
+                      >강수확률 
                       <br />
-                      <p4 style="font-size: large; font-weight: 600">40%</p4>
+                      <p4 style="font-size: large; font-weight: 600">%</p4>
                     </p1>
                   </div>
                   <br />
                   <div :class="$style.detailInfo">
                     <img src="../assets/logo.png" alt="logo" style="width: 65px; height: 65px" />
                     <p1 style="font-size: large; font-weight: 850; margin-right: 20px"
-                      >풍향
+                      >풍향 
                       <br />
-                      <p4 style="font-size: large; font-weight: 600">2.8-/s</p4>
+                      <p4 style="font-size: large; font-weight: 600">-/s</p4>
                     </p1>
                     <img src="../assets/logo.png" alt="logo" style="width: 65px; height: 65px" />
                     <p1 style="font-size: large; font-weight: 850"
-                      >습도
+                      >습도 
                       <br />
-                      <p4 style="font-size: large; font-weight: 600">75%</p4>
+                      <p4 style="font-size: large; font-weight: 600">%</p4>
                     </p1>
                   </div>
                   <div :class="$style.detailInfo2">
                     <img src="../assets/logo.png" alt="logo" style="width: 40px; height: 40px" />
                     <p1 style="font-size: large; font-weight: 850; margin-right: 20px"
-                      >미세먼지
+                      >미세먼지 
                       <br />
-                      <p4 style="font-size: large; font-weight: 400">보통</p4>
+                      <p4 style="font-size: large; font-weight: 400"></p4>
                     </p1>
                     <br />
                     <img src="../assets/logo.png" alt="logo" style="width: 40px; height: 40px" />
                     <p1 style="font-size: large; font-weight: 850"
-                      >초미세먼지
+                      >초미세먼지 
                       <br />
-                      <p4 style="font-size: large; font-weight: 400">안좋음</p4>
+                      <p4 style="font-size: large; font-weight: 400"></p4>
                     </p1>
                   </div>
                 </div>
@@ -102,7 +108,7 @@
           <table :class="$style.customTable">
             <tr>
               <th>날짜</th>
-              <th>m월 d일</th>
+              <th>{{ }}</th>
               <th>m월 d일</th>
               <th>m월 d일</th>
               <th>m월 d일</th>
@@ -160,18 +166,24 @@
 
 <script>
 import { onMounted } from 'vue';
-import { weatherData, selectedGame, fetchTodayGames, sendWeeklyRequest, selectGame } from '../WeatherInfo';
+import { weatherData, selectedGame, fetchTodayGames, weeklyWeather, selectGame, weeklyData,currentWeather, fetchWeatherData } from '../WeatherInfo';
 
 export default {
   name: 'TestPage',
   setup() {
-    onMounted(fetchTodayGames);
+    onMounted(() => {
+      fetchTodayGames();
+      weeklyData();
+      fetchWeatherData();
+    });
 
     return {
       weatherData,
       selectedGame,
-      sendWeeklyRequest,
-      selectGame
+      weeklyWeather, 
+      currentWeather,
+      selectGame,
+      weeklyData
     };
   }
 };
