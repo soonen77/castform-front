@@ -79,12 +79,12 @@
   flex-direction: column;
   justify-content: center;
   font-size: 12px;
-  font-family: 'Pretendard',sans-serif;
+  font-family: 'Pretendard', sans-serif;
   padding-left: 8px;
 }
-.weather_map_title{
-    font-family: 'Pretendard',sans-serif;
-    font-weight: 600;
+.weather_map_title {
+  font-family: 'Pretendard', sans-serif;
+  font-weight: 600;
 }
 .weather_map:hover {
   transform: translateY(-4px);
@@ -103,7 +103,7 @@
   margin-bottom: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   font-size: 12px;
-  font-family: 'Pretendard',sans-serif;
+  font-family: 'Pretendard', sans-serif;
   padding-left: 8px;
 }
 
@@ -130,11 +130,16 @@
   align-items: center;
 }
 .vsLayout {
+  font-family: 'Pretendard', sans-serif;
   display: grid;
   grid-template-columns: 2fr 1fr 2fr;
   grid-gap: 15px;
   justify-items: center;
   align-items: center;
+}
+.today_game_teamname {
+  display: grid;
+  place-items: center;
 }
 
 .weatherInfo {

@@ -145,8 +145,9 @@ export const selectedGame = ref({
   homeName: '',
   awayName: '',
   stadiumFullName : '',
-  date:''
-  
+  date:'',
+  homeCode:'',
+  awayCode:''  
 });
 
 export const fetchTodayGames = async () => {
@@ -248,7 +249,9 @@ export const selectGame = (index) => {
     homeName: game.homeName,
     awayName: game.awayName,
     stadiumFullName : game.stadiumFullName,
-    data : game.date
+    date : game.gameTime,
+    homeCode : game.homeCode,
+    awayCode : game.awayCode
     
   };
 };
