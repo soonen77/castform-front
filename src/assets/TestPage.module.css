@@ -204,10 +204,10 @@
   color: #4b5563;
 }
 
-.li {
+li {
   list-style: none;
 }
-.inputlayout{
+.inputlayout {
   display: flex;
   align-items: center;
   margin-bottom: 6%;
