@@ -17,7 +17,20 @@
                   :class="$style['weather_map' + (index + 1)]"
                   @click="selectGame(index)"
                 >
-                  <p>
+                  <div :class="$style.weather_map_title">{{ game.stadiumFullName }}</div>
+                  <div :class="$style.weather_map_contents">
+                    <img
+                      src="//lgcxydabfbch3774324.cdn.ntruss.com/KBO_IMAGE/KBOHome/resources/images/weather/sky/02_s.png"
+                      alt="이미지 없음"
+                    />
+                    <span :class="$style.celsius">{{ game.temp }}℃</span>
+                  </div>
+                  <div :class="$style.weather_map_contents">
+                    강수확률 {{ game.rain }}%<br />
+                    (초)미세먼지 <strong>{{ game.dust }}</strong>
+                  </div>
+
+                  <!-- <p>
                     <b :class="$style.weather_map_title">{{ game.stadiumFullName }}</b
                     ><br />
                     <img
@@ -27,7 +40,7 @@
                     <span :class="$style.celsius">{{ game.temp }}℃</span><br />
                     강수확률 {{ game.rain }}%<br />
                     (초)미세먼지 <strong>{{ game.dust }}</strong>
-                  </p>
+                  </p> -->
                 </div>
               </div>
               <img
