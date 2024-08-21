@@ -74,7 +74,7 @@
                 <p2 style="font-weight: 800; font-size: 25px; line-height: 29.83px">
                   {{ selectedGame.stadiumFullName }}
                 </p2>
-                <p1 style="font-size: xxx-large">{{ selectedGame. }}°</p1>
+                <p1 style="font-size: xxx-large">{{ selectedGame.temp }}°</p1>
                 <p4 v-if="weeklyWeather.weatherList.length > 0" style="font-size: small; text-align: center; margin-bottom: 10px">
                         최고: {{ weeklyWeather.weatherList[0].tempMax }}° /
                         최저: {{ weeklyWeather.weatherList[0].tempMin }}°
@@ -88,7 +88,7 @@
                       >강수량 
                       <br />
 
-                      <p4 style="font-size: large; font-weight: 600">{{ currentWeather.rain }} </p4>
+                      <p4 style="font-size: large; font-weight: 600">{{ currentWeather.rain }}mm </p4>
                     </p1>
                     <img src="../assets/logo.png" alt="logo" style="width: 65px; height: 65px" />
                     <p1 style="font-size: large; font-weight: 850"
@@ -188,6 +188,7 @@ import { weatherData, selectedGame, fetchTodayGames, weeklyWeather, selectGame,
 
 export default {
   name: 'TestPage',
+  
   setup() {
     onMounted(() => {
       fetchTodayGames();
