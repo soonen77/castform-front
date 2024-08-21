@@ -12,7 +12,8 @@ export const selectedGame = ref({
   stadiumFullName: '',
   date: '',
   stadium : '',
-  rain :Number
+  rain :Number,
+  temp : Number
 });
 
 export const weeklyWeather = ref({
@@ -144,9 +145,10 @@ export const selectGame = (index) => {
     awayName: game.awayName,
     away : game.awayCode,
     stadiumFullName: game.stadiumFullName,
-    date: game.date,
+    date: game.gameTime,
     stadium : game.stadium,
-    rain : game.rain
+    rain : game.rain,
+    temp : game.temp
   };
   weeklyData();
   fetchWeatherData();

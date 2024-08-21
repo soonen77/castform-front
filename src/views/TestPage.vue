@@ -1,5 +1,5 @@
 <template>
-  <div style="display: flex; justify-content: center"></div>
+  <div style="display: flex; justify-content: center; font-family: 'Pretendard',sans-serif;"></div>
   <div :class="$style.mainContainer">
     <div :class="$style.logo">
       <img src="../assets/logo.png" alt="logo" style="width: 100px; height: 100px" />
@@ -30,17 +30,6 @@
                     (초)미세먼지 <strong>{{ game.dust }}</strong>
                   </div>
 
-                  <!-- <p>
-                    <b :class="$style.weather_map_title">{{ game.stadiumFullName }}</b
-                    ><br />
-                    <img
-                      src="//lgcxydabfbch3774324.cdn.ntruss.com/KBO_IMAGE/KBOHome/resources/images/weather/sky/02_s.png"
-                      alt="이미지 없음"
-                    />
-                    <span :class="$style.celsius">{{ game.temp }}℃</span><br />
-                    강수확률 {{ game.rain }}%<br />
-                    (초)미세먼지 <strong>{{ game.dust }}</strong>
-                  </p> -->
                 </div>
               </div>
               <img
@@ -70,7 +59,7 @@
                     />
                     <p2 style="font-size: medium">{{ selectedGame.homeName }}</p2>
                   </div>
-                  <div><p2 style="font-size: x-large">VS </p2></div>
+                  <div><p2 style="font-size: xx-large; font-weight: 800;">VS </p2></div>
                   <div :class="$style.today_game_teamname">
                     <img
                       :src="`/logo/${selectedGame.away}.png`"
@@ -85,7 +74,7 @@
                 <p2 style="font-weight: 800; font-size: 25px; line-height: 29.83px">
                   {{ selectedGame.stadiumFullName }}
                 </p2>
-                <p1 style="font-size: xxx-large">33°</p1>
+                <p1 style="font-size: xxx-large">{{ selectedGame. }}°</p1>
                 <p4 v-if="weeklyWeather.weatherList.length > 0" style="font-size: small; text-align: center; margin-bottom: 10px">
                         최고: {{ weeklyWeather.weatherList[0].tempMax }}° /
                         최저: {{ weeklyWeather.weatherList[0].tempMin }}°
@@ -98,15 +87,14 @@
                     <p1 style="font-size: large; font-weight: 850; margin-right: 15px"
                       >강수량 
                       <br />
-                      {{ console.log(`currentWeather.rain: ${currentWeather.rain}`) }}
-                      {{ console.log(currentWeather.rain === "") }}
+
                       <p4 style="font-size: large; font-weight: 600">{{ currentWeather.rain }} </p4>
                     </p1>
                     <img src="../assets/logo.png" alt="logo" style="width: 65px; height: 65px" />
                     <p1 style="font-size: large; font-weight: 850"
                       >강수확률 
                       <br />
-                      <p4 style="font-size: large; font-weight: 600">%</p4>
+                      <p4 style="font-size: large; font-weight: 600">{{selectedGame.rain}}%</p4>
                     </p1>
                   </div>
                   <br />
@@ -115,13 +103,13 @@
                     <p1 style="font-size: large; font-weight: 850; margin-right: 20px"
                       >풍향 
                       <br />
-                      <p4 style="font-size: large; font-weight: 600">-/s</p4>
+                      <p4 style="font-size: large; font-weight: 600">{{currentWeather.wind}}-/s</p4>
                     </p1>
                     <img src="../assets/logo.png" alt="logo" style="width: 65px; height: 65px" />
                     <p1 style="font-size: large; font-weight: 850"
                       >습도 
                       <br />
-                      <p4 style="font-size: large; font-weight: 600">%</p4>
+                      <p4 style="font-size: large; font-weight: 600">{{currentWeather.humi}}%</p4>
                     </p1>
                   </div>
                   <div :class="$style.detailInfo2">
@@ -129,62 +117,52 @@
                     <p1 style="font-size: large; font-weight: 850; margin-right: 20px"
                       >미세먼지 
                       <br />
-                      <p4 style="font-size: large; font-weight: 400"></p4>
+                      <p4 style="font-size: large; font-weight: 400">{{currentWeather.dust}}</p4>
                     </p1>
                     <br />
                     <img src="../assets/logo.png" alt="logo" style="width: 40px; height: 40px" />
                     <p1 style="font-size: large; font-weight: 850"
                       >초미세먼지 
                       <br />
-                      <p4 style="font-size: large; font-weight: 400"></p4>
+                      <p4 style="font-size: large; font-weight: 400">{{ currentWeather.microDust }}</p4>
                     </p1>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
+        
           <P :class="$style.font">{{ selectedGame.stadiumFullName }} 일기예보 </P>
           <table :class="$style.customTable">
             <tr>
               <th>날짜</th>
-              <th>{{ }}</th>
-              <th>m월 d일</th>
-              <th>m월 d일</th>
-              <th>m월 d일</th>
-              <th>m월 d일</th>
+              <th v-for="(weather, index) in weeklyWeather.weatherList" :key="index">
+                {{ weather.day }}
+              </th>
             </tr>
             <tr>
               <td>예보</td>
-              <td>구름많음</td>
-              <td>구름많음</td>
-              <td>구름많음</td>
-              <td>구름많음</td>
-              <td>구름많음</td>
+              <td v-for="(weather, index) in weeklyWeather.weatherList" :key="index">
+                {{ weather.iconName }}
+              </td>
             </tr>
             <tr>
               <td>최고기온</td>
-              <td>33°</td>
-              <td>33°</td>
-              <td>33°</td>
-              <td>33°</td>
-              <td>33°</td>
+              <td v-for="(weather,index) in weeklyWeather.weatherList" :key="index">
+                {{  weather.tempMax }}°
+              </td>
             </tr>
             <tr>
               <td>최저기온</td>
-              <td>25°</td>
-              <td>25°</td>
-              <td>25°</td>
-              <td>25°</td>
-              <td>25°</td>
+              <td v-for="(weather,index) in weeklyWeather.weatherList" :key="index">
+                {{  weather.tempMin }}°
+              </td>
             </tr>
             <tr>
               <td>강수확률</td>
-              <td>20%</td>
-              <td>20%</td>
-              <td>20%</td>
-              <td>20%</td>
-              <td>20%</td>
+             <td v-for="(weather,index) in weeklyWeather.weatherList" :key="index">
+              {{ weather.tempMin }}%
+             </td>
             </tr>
           </table>
         </div>
@@ -193,7 +171,7 @@
             <div :class="$style.inputlayout">
               <input :class="$style.chatBox" />
               <button :class="$style.buttonBox">
-                <div>Submit</div>
+                <div>send</div>
               </button>
             </div>
           </div>
@@ -205,7 +183,8 @@
 
 <script>
 import { onMounted } from 'vue';
-import { weatherData, selectedGame, fetchTodayGames, weeklyWeather, selectGame, weeklyData,currentWeather, fetchWeatherData } from '../WeatherInfo';
+import { weatherData, selectedGame, fetchTodayGames, weeklyWeather, selectGame, 
+  weeklyData,currentWeather, fetchWeatherData } from '../WeatherInfo';
 
 export default {
   name: 'TestPage',
