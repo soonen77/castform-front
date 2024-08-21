@@ -1,4 +1,4 @@
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 export const weatherData = ref({
     gameList: []
@@ -56,112 +56,106 @@ export const fetchTodayGames = async () => {
     },
     body: JSON.stringify({
       gameDate: getCurrentDateFormatted(),
-      leId: "1",
-      srId: "0,1,2,3,4,5,6,7,8,9",
-      headerCk: "1"
+      leId: '1',
+      srId: '0,1,2,3,4,5,6,7,8,9',
+      headerCk: '1'
     })
-  };
+  }
 
   try {
-    const response = await fetch('http://localhost:8080/weather/todaygames', requestOptions);
+    const response = await fetch('http://localhost:8080/weather/todaygames', requestOptions)
     if (!response.ok) {
-      throw new Error(`status: ${response.status}`);
+      throw new Error(`status: ${response.status}`)
     }
-    const data = await response.json();
-    console.log(data);
-    weatherData.value = data;
+    const data = await response.json()
+    console.log(data)
+    weatherData.value = data
 
     // for (const game of data.gameList) {
     //   await fetchWeatherData(game.stadium, game.homeCode, game.awayCode);
     // }
   } catch (error) {
-    console.error("Error fetching today's games:", error);
+    console.error("Error fetching today's games:", error)
   }
-};
+}
 
 export const fetchWeatherData = async () => {
-    try {
-      const response = await fetch('http://localhost:8080/weather/current', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          stadium: selectedGame.value.stadium,
-          home: selectedGame.value.home,
-          away: selectedGame.value.away,
-          leid: "1"
-        })
-      });
-  
-      const data = await response.json();
-      currentWeather.value = data;
-      console.log('Current weather data:', data);
-      
-  
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-
-export const weeklyData = async () => {
-    const requestOptions = {
+  try {
+    const response = await fetch('http://localhost:8080/weather/current', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-       stadium: selectedGame.value.stadium
+        stadium: selectedGame.value.stadium,
+        home: selectedGame.value.home,
+        away: selectedGame.value.away,
+        leid: '1'
       })
-    };
-  
-    try {
-      const response = await fetch('http://localhost:8080/weather/weekly', requestOptions);
-      if (!response.ok) {
-        throw new Error(`status: ${response.status}`);
-      }
-  
-      const data = await response.json();
-      console.log('Weeklydata:', data);
-  
-      // Assuming data.weatherList is the array you need
-      weeklyWeather.value.weatherList = data.weatherList.map(day => ({
-        day: day.day,
-        iconName: day.iconName,
-        tempMax: day.tempMax,
-        tempMin: day.tempMin,
-        rain: day.rain
-      }));
-    } catch (error) {
-      console.error('Error fetching weekly weather data:', error);
-    }
-  };
+    })
 
-export const selectGame = (index) => {
-  const game = weatherData.value.gameList[index];
+    const data = await response.json()
+    currentWeather.value = data
+    console.log('Current weather data:', data)
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export const weeklyData = async () => {
+  const requestOptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      stadium: selectedGame.value.stadium
+    })
+  }
+
+  try {
+    const response = await fetch('http://localhost:8080/weather/weekly', requestOptions)
+    if (!response.ok) {
+      throw new Error(`status: ${response.status}`)
+    }
+
+    const data = await response.json()
+    console.log('Weeklydata:', data)
+
+    // Assuming data.weatherList is the array you need
+    weeklyWeather.value.weatherList = data.weatherList.map((day) => ({
+      day: day.day,
+      iconName: day.iconName,
+      tempMax: day.tempMax,
+      tempMin: day.tempMin,
+      rain: day.rain
+    }))
+  } catch (error) {
+    console.error('Error fetching weekly weather data:', error)
+  }
+}
+
+export const selectGame = (index = 0) => {
+  const game = weatherData.value.gameList[index]
   selectedGame.value = {
     homeName: game.homeName,
-    home:game.homeCode,
+    home: game.homeCode,
     awayName: game.awayName,
-    away : game.awayCode,
+    away: game.awayCode,
     stadiumFullName: game.stadiumFullName,
     date: game.gameTime,
-    stadium : game.stadium,
-    rain : game.rain,
-    temp : game.temp
-  };
-  weeklyData();
-  fetchWeatherData();
-
-};
-
-
+    stadium: game.stadium,
+    rain: game.rain,
+    temp: game.temp
+  }
+  weeklyData()
+  fetchWeatherData()
+}
 
 const getCurrentDateFormatted = () => {
-  const currentDate = new Date();
-  const year = currentDate.getFullYear();
-  const month = String(currentDate.getMonth() + 1).padStart(2, '0');
-  const day = String(currentDate.getDate()).padStart(2, '0');
-  return `${year}${month}${day}`;
-};
+  const currentDate = new Date()
+  const year = currentDate.getFullYear()
+  const month = String(currentDate.getMonth() + 1).padStart(2, '0')
+  const day = String(currentDate.getDate()).padStart(2, '0')
+  return `${year}${month}${day}`
+}
