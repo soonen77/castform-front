@@ -1,51 +1,52 @@
 import { ref } from 'vue';
 
 export const weatherData = ref({
-  gameList: []
-});
-
-export const selectedGame = ref({
-  homeName: '',
-  home :'',
-  awayName: '',
-  away:'',
-  stadiumFullName: '',
-  date: '',
-  stadium : '',
-  rain :Number,
-  temp : Number
-});
-
-export const weeklyWeather = ref({
-    weatherList :[]
-});
-
-export const currentWeather = ref({
-    stadium: '', 
+    gameList: []
+  })
+  
+  export const selectedGame = ref({
+    homeName: '',
+    home: '',
+    awayName: '',
+    away: '',
+    stadiumFullName: '야구장을 선택해주세요',
+    date: '',
+    stadium: '',
+    rain: 0,
+    temp: 0
+  })
+  
+  export const weeklyWeather = ref({
+    weatherList: []
+  })
+  
+  export const currentWeather = ref({
+    stadium: '',
     stadiumCode: '',
-    date: '', 
+    date: '',
     castDate: '',
     awayCode: '',
     awayTeam: '',
     homeCode: '',
     homeTeam: '',
     iconName: '',
-    temp: Number,
-    dust: '',
-    microDust: '',
+    temp: '0',
+    dust: '0',
+    microDust: '0',
     microDustIcon: '',
-    rain: '',
-    humiIcon:'',
-    humi: Number,
-    windIcon:Number,
-    wind:Number,
+    rain: '0',
+    humiIcon: '',
+    humi: 0,
+    windIcon: Number,
+    wind: 0,
     today: '',
     todayTime: '',
     tomorrow: '',
     tomorrowTime: '',
     aftertomorrow: '',
     aftertomorrowTime: ''
-})
+  })
+  
 
 export const fetchTodayGames = async () => {
   const requestOptions = {

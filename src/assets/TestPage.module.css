@@ -135,7 +135,7 @@
   align-items: center;
   margin-bottom: 15px;
   justify-content: center;
-  font-family: 'Pretendard',sans-serif;
+  font-family: 'Pretendard', sans-serif;
 }
 .startLayout {
   display: flex;
@@ -164,7 +164,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'Pretendard',sans-serif;
+  font-family: 'Pretendard', sans-serif;
 }
 .detailInfo {
   display: flex;
@@ -193,13 +193,14 @@
 .chatlayout {
   width: 100%;
   height: 480px;
-  background-color:  rgba(217, 217, 217, 0.19);
+  background-color: rgba(217, 217, 217, 0.19);
   border-radius: 10px;
   border: #e5e7ec 0.5px solid;
   box-shadow: 0px 2px 2px rgb(234, 231, 231);
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 10px;
 }
 
 .chatBox {
@@ -237,6 +238,7 @@
   padding: 12px;
   text-align: center;
   border-bottom: 1px solid #e5e7eb;
+
 }
 
 .customTable th {
@@ -253,4 +255,12 @@ li {
   display: flex;
   align-items: center;
   margin-bottom: 6%;
+  justify-content: center;
+}
+.textlayout {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 10%;
+  padding-right: 10%;
 }
