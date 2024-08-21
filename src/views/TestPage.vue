@@ -86,78 +86,64 @@
                 </p>
                 <div style="display: flex; flex-direction: column">
                   <div :class="$style.detailInfo">
-                    <img src="../assets/logo.png" alt="logo" style="width: 65px; height: 65px" />
+                    <img
+                      src="../assets/rainamount.png"
+                      alt="logo"
+                      style="width: 65px; height: 65px"
+                    />
                     <div style="font-size: large; font-weight: 850; margin-right: 15px">
                       강수량
-                    <img src="../assets/rainamount.png" alt="logo" style="width: 65px; height: 65px" />
-                    <p1 style="font-size: large; font-weight: 850; margin-right: 15px"
-                      >강수량 
                       <br />
-
-                      <p style="font-size: large; font-weight: 600">{{ currentWeather.rain }}</p>
+                      <p style="font-size: large; font-weight: 600">{{ currentWeather.rain }}mm</p>
                     </div>
-                    <img src="../assets/logo.png" alt="logo" style="width: 65px; height: 65px" />
+                    <img
+                      src="../assets/rainpercent.png"
+                      alt="logo"
+                      style="width: 65px; height: 65px"
+                    />
                     <div style="font-size: large; font-weight: 850">
                       강수확률
-                      <p4 style="font-size: large; font-weight: 600">{{ currentWeather.rain }}mm </p4>
-                    </p1>
-                    <img src="../assets/rainpercent.png" alt="logo" style="width: 65px; height: 65px" />                  
-                    <p1 style="font-size: large; font-weight: 850"
-                      >강수확률 
                       <br />
                       <p style="font-size: large; font-weight: 600">{{ selectedGame.rain }}%</p>
                     </div>
                   </div>
                   <br />
                   <div :class="$style.detailInfo">
-                    <img src="../assets/logo.png" alt="logo" style="width: 65px; height: 65px" />
+                    <img src="../assets/wind.png" alt="logo" style="width: 65px; height: 65px" />
                     <div style="font-size: large; font-weight: 850; margin-right: 20px">
-                      풍향
-                    <img src="../assets/wind.png" alt="wind" style="width: 65px; height: 65px" />
-                    <p1 style="font-size: large; font-weight: 850; margin-right: 20px"
-                      >풍속 
+                      풍속
                       <br />
                       <p style="font-size: large; font-weight: 600">{{ currentWeather.wind }}-/s</p>
                     </div>
-                    <img src="../assets/logo.png" alt="logo" style="width: 65px; height: 65px" />
+                    <img src="../assets/humid.png" alt="logo" style="width: 65px; height: 65px" />
                     <div style="font-size: large; font-weight: 850">
                       습도
-                      <p4 style="font-size: large; font-weight: 600">{{currentWeather.wind}}-/s</p4>
-                    </p1>
-                    <img src="../assets/humid.png" alt="humid" style="width: 65px; height: 65px" />
-                    <p1 style="font-size: large; font-weight: 850"
-                      >습도 
                       <br />
                       <p style="font-size: large; font-weight: 600">{{ currentWeather.humi }}%</p>
                     </div>
                   </div>
                   <div :class="$style.detailInfo2">
-                    <img src="../assets/logo.png" alt="logo" style="width: 40px; height: 40px" />
-                    <div style="font-size: large; font-weight: 850; margin-right: 20px">
+                    <div style="font-size: large; font-weight: 850; margin-right: 20px">                      
+                      <!-- <img src="../assets/logo.png" alt="logo" style="width: 40px; height: 40px" /> -->
+                      <img
+                        :src="`/dust/${currentWeather.dustIcon}.png`"
+                        @error="$event.target.src = '/dustdefaultmask.png'"
+                        style="width: 50px; height: 50px"
+                      />
                       미세먼지
-                    <!-- <img src="../assets/logo.png" alt="logo" style="width: 40px; height: 40px" /> -->
-                    <img
-                      :src="`/dust/${currentWeather.dustIcon}.png`"
-                      @error="$event.target.src = '/dustdefaultmask.png'"
-                      style="width: 50px; height: 50px"
-                    />
-                    <p1 style="font-size: large; font-weight: 850; margin-right: 20px"
-                      >미세먼지 
                       <br />
                       <p style="font-size: large; font-weight: 400">{{ currentWeather.dust }}</p>
                     </div>
                     <br />
-                    <img src="../assets/logo.png" alt="logo" style="width: 40px; height: 40px" />
-                    <div style="font-size: large; font-weight: 850">
+
+                    <div style="font-size: large; font-weight: 850">                      
+                      <!-- <img src="../assets/logo.png" alt="logo" style="width: 40px; height: 40px" /> -->
+                      <img
+                        :src="`/dust/${currentWeather.microDustIcon}.png`"
+                        @error="$event.target.src = '/dustdefaultmask.png'"
+                        style="width: 50px; height: 50px"
+                      />
                       초미세먼지
-                    <!-- <img src="../assets/logo.png" alt="logo" style="width: 40px; height: 40px" /> -->
-                    <img
-                      :src="`/dust/${currentWeather.microDustIcon}.png`"
-                      @error="$event.target.src = '/dustdefaultmask.png'"
-                      style="width: 50px; height: 50px"
-                    />
-                    <p1 style="font-size: large; font-weight: 850"
-                      >초미세먼지 
                       <br />
                       <p style="font-size: large; font-weight: 400">
                         {{ currentWeather.microDust }}
@@ -169,7 +155,7 @@
             </div>
           </div>
 
-          <p :class="$style.font">{{ selectedGame.stadiumFullName }} 일기예보 </p>
+          <p :class="$style.font">{{ selectedGame.stadiumFullName }} 일기예보</p>
           <table :class="$style.customTable">
             <tr>
               <th>날짜</th>
@@ -205,10 +191,10 @@
         </div>
         <div :class="$style.chatContainer">
           <div :class="$style.chatlayout">
-            <div :class = "$style.textlayout">
-            <div v-for="chatMsg in chatMessages" :key="`${chatMsg.sender}${chatMsg.timestamp}`">
-              {{ chatMsg.content }}
-            </div>
+            <div :class="$style.textlayout">
+              <div v-for="chatMsg in chatMessages" :key="`${chatMsg.sender}${chatMsg.timestamp}`">
+                {{ chatMsg.content }}
+              </div>
             </div>
             <div :class="$style.inputlayout">
               <input v-model="chatText" :class="$style.chatBox" @keyup.enter="send" />
