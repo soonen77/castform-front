@@ -20,8 +20,9 @@
                   <div :class="$style.weather_map_title">{{ game.stadiumFullName }}</div>
                   <div :class="$style.weather_map_contents">
                     <img
-                      src="//lgcxydabfbch3774324.cdn.ntruss.com/KBO_IMAGE/KBOHome/resources/images/weather/sky/02_s.png"
-                      alt="이미지 없음"
+                      :src="`/weather/${game.icon}.png`"
+                      @error="$event.target.src = '/logo.png'"
+                      style="width: 50px; height: 50px"
                     />
                     <span :class="$style.celsius">{{ game.temp }}℃</span>
                   </div>
@@ -29,7 +30,6 @@
                     강수확률 {{ game.rain }}%<br />
                     (초)미세먼지 <strong>{{ game.dust }}</strong>
                   </div>
-
                 </div>
               </div>
               <img
@@ -83,14 +83,14 @@
                       </p4>
                 <div style="display: flex; flex-direction: column">
                   <div :class="$style.detailInfo">
-                    <img src="../assets/logo.png" alt="logo" style="width: 65px; height: 65px" />
+                    <img src="../assets/rainamount.png" alt="logo" style="width: 65px; height: 65px" />
                     <p1 style="font-size: large; font-weight: 850; margin-right: 15px"
                       >강수량 
                       <br />
 
                       <p4 style="font-size: large; font-weight: 600">{{ currentWeather.rain }}mm </p4>
                     </p1>
-                    <img src="../assets/logo.png" alt="logo" style="width: 65px; height: 65px" />
+                    <img src="../assets/rainpercent.png" alt="logo" style="width: 65px; height: 65px" />                  
                     <p1 style="font-size: large; font-weight: 850"
                       >강수확률 
                       <br />
@@ -99,13 +99,13 @@
                   </div>
                   <br />
                   <div :class="$style.detailInfo">
-                    <img src="../assets/logo.png" alt="logo" style="width: 65px; height: 65px" />
+                    <img src="../assets/wind.png" alt="wind" style="width: 65px; height: 65px" />
                     <p1 style="font-size: large; font-weight: 850; margin-right: 20px"
-                      >풍향 
+                      >풍속 
                       <br />
                       <p4 style="font-size: large; font-weight: 600">{{currentWeather.wind}}-/s</p4>
                     </p1>
-                    <img src="../assets/logo.png" alt="logo" style="width: 65px; height: 65px" />
+                    <img src="../assets/humid.png" alt="humid" style="width: 65px; height: 65px" />
                     <p1 style="font-size: large; font-weight: 850"
                       >습도 
                       <br />
@@ -113,14 +113,24 @@
                     </p1>
                   </div>
                   <div :class="$style.detailInfo2">
-                    <img src="../assets/logo.png" alt="logo" style="width: 40px; height: 40px" />
+                    <!-- <img src="../assets/logo.png" alt="logo" style="width: 40px; height: 40px" /> -->
+                    <img
+                      :src="`/dust/${currentWeather.dustIcon}.png`"
+                      @error="$event.target.src = '/dustdefaultmask.png'"
+                      style="width: 50px; height: 50px"
+                    />
                     <p1 style="font-size: large; font-weight: 850; margin-right: 20px"
                       >미세먼지 
                       <br />
                       <p4 style="font-size: large; font-weight: 400">{{currentWeather.dust}}</p4>
                     </p1>
                     <br />
-                    <img src="../assets/logo.png" alt="logo" style="width: 40px; height: 40px" />
+                    <!-- <img src="../assets/logo.png" alt="logo" style="width: 40px; height: 40px" /> -->
+                    <img
+                      :src="`/dust/${currentWeather.microDustIcon}.png`"
+                      @error="$event.target.src = '/dustdefaultmask.png'"
+                      style="width: 50px; height: 50px"
+                    />
                     <p1 style="font-size: large; font-weight: 850"
                       >초미세먼지 
                       <br />

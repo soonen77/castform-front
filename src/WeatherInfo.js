@@ -13,7 +13,8 @@ export const selectedGame = ref({
   date: '',
   stadium: '',
   rain: 0,
-  temp: 0
+  temp: 0,
+  icon:''
 })
 
 export const weeklyWeather = ref({
@@ -32,8 +33,9 @@ export const currentWeather = ref({
   iconName: '',
   temp: '0',
   dust: '0',
+  dustIcon:'01',
   microDust: '0',
-  microDustIcon: '',
+  microDustIcon: '01',
   rain: '0',
   humiIcon: '',
   humi: 0,
@@ -145,7 +147,8 @@ export const selectGame = (index = 0) => {
     date: game.gameTime,
     stadium: game.stadium,
     rain: game.rain,
-    temp: game.temp
+    temp: game.temp,
+    icon: game.icon
   }
   weeklyData()
   fetchWeatherData()
